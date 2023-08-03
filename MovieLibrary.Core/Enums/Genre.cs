@@ -1,6 +1,6 @@
-﻿namespace MovieLibrary.ServiceModels.Enums
+﻿namespace MovieLibrary.Core.Enums
 {
-    public enum MovieGenre
+    public enum Genre
     {
         Comedy = 1,
         Thriller,

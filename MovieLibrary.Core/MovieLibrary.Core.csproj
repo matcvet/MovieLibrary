@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MovieLibrary.DataModels\MovieLibrary.DataModels.csproj" />
-    <ProjectReference Include="..\MovieLibrary.ServiceModels\MovieLibrary.ServiceModels.csproj" />
+    <PackageReference Include="FluentValidation" Version="11.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieLibrary.DataAccess\MovieLibrary.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MovieLibrary.DataModels;
+using MovieLibrary.DataAccess.Entities;
 
 namespace MovieLibrary.DataAccess
 {
@@ -13,6 +13,6 @@ namespace MovieLibrary.DataAccess
     {
         public MovieLibraryDbContext(DbContextOptions options) : base(options) {}
 
-        public DbSet<MovieDto> Movies { get; set; }
+        public DbSet<Movie> Movies { get; set; }
     }
 }

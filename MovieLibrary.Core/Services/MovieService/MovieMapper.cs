@@ -1,14 +1,14 @@
-﻿using MovieLibrary.DataModels;
-using MovieLibrary.ServiceModels.Enums;
-using MovieLibrary.ServiceModels.Models;
+﻿using MovieLibrary.Core.Models;
+using MovieLibrary.DataAccess.Entities;
+using MovieLibrary.Core.Enums;
 
-namespace MovieLibrary.Mappers
+namespace MovieLibrary.Core.Services
 {
     public static class MovieMapper
     {
-        public static MovieDto ToMovieDto(this MovieModel model)
+        public static Movie ToMovieDto(this MovieModel model)
         {
-            return new MovieDto
+            return new Movie
             {
                 Title = model.Title,
                 Description = model.Description,
@@ -17,7 +17,7 @@ namespace MovieLibrary.Mappers
             };
         }
 
-        public static MovieModel ToMovieModel(this MovieDto model)
+        public static MovieModel ToMovieModel(this Movie model)
         {
             return new MovieModel
             {
@@ -25,7 +25,7 @@ namespace MovieLibrary.Mappers
                 Title = model.Title,
                 Description = model.Description,
                 Year = model.Year,
-                Genre = (MovieGenre)model.Genre
+                Genre = (Genre)model.Genre
             };
         }
     }

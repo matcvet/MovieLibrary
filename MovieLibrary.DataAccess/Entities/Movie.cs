@@ -1,13 +1,11 @@
-﻿using MovieLibrary.ServiceModels.Enums;
-
-namespace MovieLibrary.ServiceModels.Models
+﻿namespace MovieLibrary.DataAccess.Entities
 {
-    public class MovieModel
+    public class Movie
     {
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int Year { get; set; }
-        public MovieGenre Genre { get; set; }
+        public int Genre { get; set; }
     }
 }

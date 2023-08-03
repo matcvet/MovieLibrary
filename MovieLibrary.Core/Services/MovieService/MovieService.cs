@@ -1,22 +1,23 @@
 ﻿using MovieLibrary.DataAccess.Abstraction;
-using MovieLibrary.DataModels;
-using MovieLibrary.ServiceModels.Models;
-using MovieLibrary.Services.Abstraction;
-using MovieLibrary.Mappers;
+using MovieLibrary.DataAccess.Entities;
+using MovieLibrary.Core.Models;
+using FluentValidation;
 
-namespace MovieLibrary.Services.Implementation
+namespace MovieLibrary.Core.Services
 {
     public class MovieService : IMovieService
     {
-        private readonly IRepository<MovieDto> _movieRepository;
+        private readonly IRepository<Movie> _movieRepository;
+        private readonly MovieValidator _movieValidator = new MovieValidator();
 
-        public MovieService(IRepository<MovieDto> movieRepository)
+        public MovieService(IRepository<Movie> movieRepository)
         {
             _movieRepository = movieRepository;
         }
 
         public void AddMovie(MovieModel model)
         {
+            _movieValidator.ValidateAndThrow(model);
             _movieRepository.Add(model.ToMovieDto());
         }
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieLibrary.ServiceModels.Models;
-using MovieLibrary.Services.Abstraction;
+using MovieLibrary.Core.Models;
+using MovieLibrary.Core.Services;
 
 namespace MovieLibrary.Controllers
 {
@@ -34,9 +34,15 @@ namespace MovieLibrary.Controllers
         [HttpPost("Add")]
         public IActionResult AddMovie([FromBody] MovieModel model)
         {
-            _movieService.AddMovie(model);
-
-            return Ok();
+            try
+            {
+                _movieService.AddMovie(model);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete("Delete/{id}")]

@@ -1,6 +1,6 @@
-﻿using MovieLibrary.ServiceModels.Models;
+﻿using MovieLibrary.Core.Models;
 
-namespace MovieLibrary.Services.Abstraction
+namespace MovieLibrary.Core.Services
 {
     public interface IMovieService
     {
